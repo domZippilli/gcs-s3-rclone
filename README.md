@@ -10,7 +10,7 @@ Your service account can use the Object Creator role, or simply Storage Admin. Y
 
 ## Get a VM
 
-You'll need a VM to perform the copy. It's a good idea to put this VM geographically close to your AWS bucket. Here's an example:
+You'll need a VM to perform the copy. It's a good idea to put this VM geographically close to your AWS bucket. This VM should use the service account you just created. Here's an example:
 
 ``` shell
 gcloud beta compute \
@@ -38,9 +38,11 @@ instances create object-sync-worker \
 
 Something like this should do it:
 
-`gcloud beta compute ssh \
+``` shell
+gcloud beta compute ssh \
 --zone "us-east4-c" "object-sync-vm" \
---project "YOUR_PROJECT"`
+--project "YOUR_PROJECT"
+```
 
 You might need to open a firewall rule for this to work. Alternatively, you can connect via the GCP UI's **SSH** button in the VM listing.
 
