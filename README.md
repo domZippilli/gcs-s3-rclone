@@ -46,13 +46,25 @@ You might need to open a firewall rule for this to work. Alternatively, you can 
 
 ## Install rclone
 
-Should be nothing more to this than `sudo apt install rclone` with the Debian 10 image used above. You should get version 1.45-3, which is not the most current but works for these purposes. Follow installation instructions at [rclone.org](https://www.rclone.org) for newer versions.
+To ensure you get the latest version, download the `*-amd64.deb` for the latest [here](https://downloads.rclone.org/).
+
+For this README, we will use version `1.51.0`, downloaded with: `curl -O https://downloads.rclone.org/v1.51.0/rclone-v1.51.0-linux-amd64.deb`
+
+Install it with `sudo dpkg -i ./rclone-v1.51.0-linux-amd64.deb`.
 
 ## Configure rclone
 
+### Clone this repository (optional)
+
+Install git: `sudo apt install -y git`.
+
+Clone this repository to the VM with `git clone https://github.com/domZippilli/gcs-s3-rclone.git`.
+
+Change PWD to the repo root with `cd gcs-s3-rclone`.
+
 ### Create the config file
 
-First, find out the rclone config file path by running `rclone config file`.
+Find out the rclone config file path by running `rclone config file`.
 
 ``` text
 $ rclone config file
@@ -66,7 +78,7 @@ Create this file by copying the rclone.conf in this directory over it (unless yo
 
 Alternatively, you can create a symlink to the `rclone.conf` in this repo:
 
-`ln -s $PWD/rclone.conf /usr/local/google/home/domz/.config/rclone/rclone.conf`
+`ln -s $PWD/rclone.conf /home/$USER/.config/rclone/rclone.conf`
 
 (Just be sure not to commit and push any secrets!!!)
 
@@ -74,7 +86,7 @@ Alternatively, you can create a symlink to the `rclone.conf` in this repo:
 
 The `[gcs]` remote for rclone will use the environment metadata from your VM to configure itself, so all you need to add to the configuration file is information to authenticate with AWS.
 
-To do so, put your Access Key and Secret Access Key in the rclone.conf file as appropriate:
+To do so, put your Access Key and Secret Access Key in the rclone.conf file with an editor as appropriate:
 
 ``` text
 access_key_id = AK_ID
