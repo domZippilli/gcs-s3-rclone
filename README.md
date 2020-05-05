@@ -105,8 +105,8 @@ Now you're all set. At the simplest level, a [sync](https://rclone.org/commands/
 
 You may need/want to experiment with the following command line options:
 
-  - `--s3-region`: Set the region where the source bucket is. You'll need this in order to access the bucket. You can set a default in the rclone.conf file.
-  - `--transfers`: Set the number of simultaneous transfers. The default is 4, and in many cases (dependent on cores, connectivity, and other factors) higher numbers will result in higher throughput. For more info, see [the docs](https://rclone.org/docs/).
+- `--s3-region`: Set the region where the source bucket is. You'll need this in order to access the bucket. You can set a default in the rclone.conf file.
+- `--transfers`: Set the number of simultaneous transfers. The default is 4, and in many cases (dependent on cores, connectivity, and other factors) higher numbers will result in higher throughput. For more info, see [the docs](https://rclone.org/docs/).
 
 Other rclone commands, such as `lsd` and `ls`, should work with both providers as well. For a full list of commands, see [here](https://rclone.org/commands/).
 
