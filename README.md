@@ -1,6 +1,6 @@
 # Using rclone to synchronize AWS S3 to GCP GCS
 
-[`rclone`](https://www.rclone.org) is a great open source tool for synchronizing data across various storage platforms. Of the many it offers, AWS S3 and GCP's GCS are just two.
+[`rclone`](https://www.rclone.org) is a great open source tool for synchronizing data across various storage platforms. Of the many it supports, AWS S3 and GCP's GCS are just two.
 
 This repo will show some hints and tips to get you started for using rclone in GCP with GCS. For the purposes of this repo, we'll use a GCE VM, but other runtimes such as GKE can do this as well, with minimal modification.
 
